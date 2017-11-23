@@ -20,4 +20,7 @@ def create_application(configuration):
 	from application.init.views import blueprint
 	application.register_blueprint(blueprint)
 
+	from application.metadata.views import blueprint
+	application.register_blueprint(blueprint)
+
 	return application
