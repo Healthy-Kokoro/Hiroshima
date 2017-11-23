@@ -14,7 +14,6 @@ class Configuration:
 
 class DevelopmentConfiguration(Configuration):
 	DEBUG = True
-	JSONIFY_PRETTYPRINT_REGULAR = True
 	SQLALCHEMY_DATABASE_URI = getenv('DATABASE_URL', default='sqlite:///development.db')
 
 class TestingConfiguration(Configuration):
@@ -22,7 +21,9 @@ class TestingConfiguration(Configuration):
 	SQLALCHEMY_DATABASE_URI = getenv('DATABASE_URL', default='sqlite:///testing.db')
 
 class StagingConfiguration(Configuration):
+	JSONIFY_PRETTYPRINT_REGULAR = False
 	SQLALCHEMY_DATABASE_URI = getenv('DATABASE_URL', default='sqlite:///staging.db')
 
 class ProductionConfiguration(Configuration):
+	JSONIFY_PRETTYPRINT_REGULAR = False
 	SQLALCHEMY_DATABASE_URI = getenv('DATABASE_URL', default='sqlite:///production.db')

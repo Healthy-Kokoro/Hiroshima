@@ -81,7 +81,7 @@ class Updater():
 				elif metadata.version < version:
 					metadata.version = version
 					metadata.commit()
-					print('{} metadata was obsolete.'.format(name))
+					print('{} metadata was updated.'.format(name))
 				else:
 					print('{} metadata is current.'.format(name))
 			print('Successfully updated metadata.')
