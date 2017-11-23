@@ -9,7 +9,7 @@ from .models import Metadata
 
 blueprint = Blueprint('metadata', __name__, url_prefix='/api/metaData')
 
-@blueprint.route('/version')
+@blueprint.route('/version/')
 @session_required
 def get_metadata_versions():
 	metadata_versions = {}
